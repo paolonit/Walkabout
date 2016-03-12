@@ -12,8 +12,9 @@
     tools:context="org.avontechclub.walkabout.HomeActivity"
     tools:showIn="@layout/activity_home">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/buttonText"
+        android:onClick="sendContent"/>
 </RelativeLayout>
