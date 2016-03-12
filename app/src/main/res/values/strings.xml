@@ -4,6 +4,7 @@
     <string name="title_activity_content">ContentActivity</string>
     <string name="buttonText">Push</string>
     <string name="loginText">Login</string>
+    <string name="editMessage">Type Content Name</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
