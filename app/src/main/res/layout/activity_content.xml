@@ -34,6 +34,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
                     android:onClick="sendHome"
+                    android:text="@string/back"
+
                 />
 
             </android.support.v7.widget.Toolbar>
