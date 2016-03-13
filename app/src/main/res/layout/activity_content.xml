@@ -28,18 +28,18 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
                 >
-                <Button
+                <!--<Button
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:onClick="sendHome"
-                    android:background="@drawable/ic_back"
-
-                    />
+                    android:text="@string/back"
+                    android:textSize="25dp"
+                    android:background="@null"
+                />-->
 
             </android.support.v7.widget.Toolbar>
 
