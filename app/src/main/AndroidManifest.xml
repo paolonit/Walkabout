@@ -28,11 +28,13 @@
             android:label="@string/title_activity_content"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName="org.avontechclub.walkabout.HomeActivity"
-            />
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="org.avontechclub.walkabout.HomeActivity"
-            />
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.avontechclub.walkabout.HomeActivity"
+                />
+        </activity>
+
 
         <activity
             android:name=".LoginActivity"
