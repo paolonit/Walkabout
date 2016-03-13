@@ -38,6 +38,8 @@ public class ContentActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
     }
 
 

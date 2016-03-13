@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -27,6 +29,8 @@ public class HomeActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
     }
 
     @Override
@@ -51,12 +55,16 @@ public class HomeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     public void sendContent (View view){
         Intent intent = new Intent(this, ContentActivity.class);
         startActivity(intent);
     }
     public void sendLogin (View view){
         Intent intent = new Intent(this, LoginActivity.class);
+        EditText editText = (EditText) findViewById(R.id.edit_message);
+        String locationID = editText.getText().toString();
+
         startActivity(intent);
     }
 }
