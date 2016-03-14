@@ -21,8 +21,16 @@
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            android:background="@mipmap/randy">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <!--android:background="@mipmap/randy"-->
+
+            <ImageView
+                android:id="@+id/actionbar_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:src="@drawable/image_test"
+                android:scaleType="centerCrop" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"

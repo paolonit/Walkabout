@@ -1,6 +1,7 @@
 package org.avontechclub.walkabout;
 
 import android.content.Context;
+//import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -12,7 +13,7 @@ import java.io.OutputStream;
 import java.sql.SQLException;
 
 /**
- * Created by tspao on 3/12/2016.
+ * Created by tspao on 3/12/2016
  */
 public class DataBaseHelper extends SQLiteOpenHelper {
     static Context obj;
@@ -120,11 +121,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+
+
     public void openDataBase() throws SQLException {
 
         //Open the database
         String myPath = DB_PATH + DB_NAME;
         myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+
+
 
     }
 

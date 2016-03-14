@@ -8,6 +8,7 @@
     tools:context="org.avontechclub.walkabout.ContentActivity">
 
     <TextView
+        android:id="@+id/content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"

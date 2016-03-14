@@ -13,7 +13,7 @@ import android.widget.EditText;
 
 
 public class HomeActivity extends AppCompatActivity {
-
+    public final static String LOC_ID = "org.avontechclub.walkabout.LOCATION_ID";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,12 +58,14 @@ public class HomeActivity extends AppCompatActivity {
 
     public void sendContent (View view){
         Intent intent = new Intent(this, ContentActivity.class);
+        EditText editText = (EditText) findViewById(R.id.edit_message);
+        String locationID = editText.getText().toString();
+        intent.putExtra(LOC_ID, locationID);
         startActivity(intent);
     }
     public void sendLogin (View view){
         Intent intent = new Intent(this, LoginActivity.class);
-        EditText editText = (EditText) findViewById(R.id.edit_message);
-        String locationID = editText.getText().toString();
+
 
         startActivity(intent);
     }
