@@ -1,7 +1,10 @@
 package org.avontechclub.walkabout;
 
 import android.content.Intent;
+import android.nfc.NdefMessage;
+import android.nfc.NfcAdapter;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +13,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -29,6 +33,28 @@ public class HomeActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+    }
+    public void onResume(){
+        super.onResume();
+        //Intent intent = new Intent();
+        //android.nfc.NdefMessage[] msgs;
+        String id;
+        if(NfcAdapter.ACTION_NDEF_DISCOVERED.equals(getIntent().getAction())){
+            id = NfcAdapter.EXTRA_ID;
+            TextView textView = (TextView) findViewById(R.id.nfctext);
+            textView.setText(id);
+
+            /*Parcelable[] rawMsgs = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
+            if (rawMsgs != null){
+                msgs = new NdefMessage[rawMsgs.length];
+                for (int i = 0; i < rawMsgs.length; i++){
+                    msgs[i] = (NdefMessage) rawMsgs[i];
+                }
+            }*/
+        }
+
 
 
     }
