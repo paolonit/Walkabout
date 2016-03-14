@@ -9,6 +9,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
@@ -42,6 +43,7 @@ public class ContentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -59,11 +61,22 @@ public class ContentActivity extends AppCompatActivity {
         int titleID = getResources().getIdentifier("title_" + locationID, "string", "org.avontechclub.walkabout");
         int imageID = getResources().getIdentifier("image_" + locationID, "drawable", "org.avontechclub.walkabout");
 
-        String title = getString(titleID);
+        String title = null;
+        try {
+            title = getString(titleID);
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
         getSupportActionBar().setTitle(title);
 
         ImageView imageView = (ImageView)findViewById(R.id.actionbar_image);
-        imageView.setImageResource(imageID);
+        try {
+            imageView.setImageResource(imageID);
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
 
         TextView textView = (TextView) findViewById(R.id.content);
         AssetManager assetManager = getResources().getAssets();
@@ -74,15 +87,21 @@ public class ContentActivity extends AppCompatActivity {
             locationContent = convert_to_String(inputStream);
         } catch (IOException e) {
             e.printStackTrace();
+
         }
         textView.setText(locationContent);
-        Bitmap image = BitmapFactory.decodeResource(getResources(), imageID);
-        Palette p = Palette.from(image).generate();
-        int color = 1;
-        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-        collapsingToolbarLayout.setContentScrimColor(p.getMutedColor(color));
-        Window window = getWindow();
-        window.setStatusBarColor(p.getDarkMutedColor(color));
+        try {
+            Bitmap image = BitmapFactory.decodeResource(getResources(), imageID);
+            Palette p = Palette.from(image).generate();
+            int color = 1;
+            CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
+            collapsingToolbarLayout.setContentScrimColor(p.getMutedColor(color));
+            Window window = getWindow();
+            window.setStatusBarColor(p.getDarkMutedColor(color));
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
     }
     public String convert_to_String(InputStream inputStream)
     {
@@ -110,6 +129,8 @@ public class ContentActivity extends AppCompatActivity {
         return  stringBuilder.toString();
 
     }
+
+
 
 
 
