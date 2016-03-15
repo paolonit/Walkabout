@@ -109,6 +109,7 @@
         completions."
     </string>
     <string name="back">&lt;</string>
+    <string name="recent">Recent Locations</string>
 
     <string name="dialog_message">Looks like you entered a wrong code. Try again</string>
     <string name="dialog_title">Whoops! There was an error&#8230;</string>
